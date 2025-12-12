@@ -1,90 +1,67 @@
-let Score = 112;                 //number
-let str = "Hello JavaScript";    // String
-let bool = true;                 // Boolean
-let und;                         // Undefined
-let nl = null;                   // Null
-let bigIntVal = 123456789123456789n; // BigInt
-let sym = Symbol("id");          // Symbol
+let score = 112;                        // Number
+let str = "Hello JavaScript";           // String
+let bool = true;                        // Boolean
+let und;                                // Undefined
+let nl = null;                          // Null
+let bigIntVal = 123456789123456789n;    // BigInt
+let sym = Symbol("id");                 // Symbol
 
-console.log("Score is " + Score+ " Type of Score is " + typeof Score);
-console.log(`Score is ${Score} Type is ${typeof Score}`);
+console.log({ score, str, bool, und, nl, bigIntVal, sym });
 
-//number to String 
+console.log("=== Number to String ===");
 
-let numberToStirng = String(Score);
-console.log(`Score is ${numberToStirng} Type is ${typeof numberToStirng}`);
+let numToString1 = String(score);
+let numToString2 = score.toString();
+let numToString3 = `${score}`;
+
+console.log("String(score)       =>", numToString1, "| Type:", typeof numToString1);
+console.log("score.toString()    =>", numToString2, "| Type:", typeof numToString2);
+console.log("Template literal    =>", numToString3, "| Type:", typeof numToString3);
+
+let validString = "33";
+let invalidString = "33abc";
+
+console.log("Number('33')        =>", Number(validString), "| Type:", typeof Number(validString));
+console.log("Number('33abc')     =>", Number(invalidString)); // NaN
+console.log("parseInt('33abc')   =>", parseInt(invalidString));
+console.log("parseFloat('40.55') =>", parseFloat("40.55"));
+
+console.log("Number('abc')  =>", Number("abc"));       // NaN
+console.log("undefined + 5  =>", undefined + 5);       // NaN
+console.log("0 / 0          =>", 0 / 0);               // NaN
+console.log("isNaN('abc')   =>", isNaN("abc"));        // true
+console.log("Number.isNaN('abc') =>", Number.isNaN("abc")); // false (strict)
+console.log("Number.isNaN(Number('abc')) =>", Number.isNaN(Number("abc"))); // true
 
 
- //String converion
-
-console.log(str);
-console.log(bool);
-
-
-
-let score = "MUQTASID"
-
-console.log(typeof score);
-console.log(typeof(score));
-
-let valueInNumber = Number(score)
-console.log(typeof valueInNumber);
-console.log(valueInNumber);
+console.log("Number(true)   =>", Number(true));     // 1
+console.log("Number(false)  =>", Number(false));    // 0
+console.log("String(true)   =>", String(true));     // "true"
+console.log("Boolean(1)     =>", Boolean(1));       // true
+console.log("Boolean(0)     =>", Boolean(0));       // false
 
 
-// "33" => 33
-// "33abc" => NaN
-//  true => 1; false => 0
+console.log("String(undefined)  =>", String(undefined));      // "undefined"
+console.log("Number(undefined)  =>", Number(undefined));      // NaN
+console.log("Boolean(undefined) =>", Boolean(undefined));     // false
 
-let isLoggedIn = "muqtasid"
+console.log("String(null)       =>", String(null));           // "null"
+console.log("Number(null)       =>", Number(null));           // 0
+console.log("Boolean(null)      =>", Boolean(null));          // false
 
-let booleanIsLoggedIn = Boolean(isLoggedIn)
-console.log(booleanIsLoggedIn);
 
-// 1 => true; 0 => false
-// "" => false
-// "hitesh" => true
+let arr = [1, 2, 3];
 
-let someNumber = 33
+console.log("String([1,2,3])   =>", String(arr));      // "1,2,3"
+console.log("[1,2,3].toString() =>", arr.toString());  // "1,2,3"
 
-let stringNumber = String(someNumber)
-// console.log(stringNumber);
-// console.log(typeof stringNumber);
+console.log("Number([5])       =>", Number([5]));      // 5
+console.log("Number([1,2,3])   =>", Number([1,2,3]));  // NaN
 
-// *********************** Operations ***********************
+console.log("[] + []           =>", [] + []);          // ""
+console.log("[] + {}           =>", [] + {});          // "[object Object]"
 
-let value = 3
-let negValue = -value
-// console.log(negValue);
-
-// console.log(2+2);
-// console.log(2-2);
-// console.log(2*2);
-// console.log(2**3);
-// console.log(2/3);
-// console.log(2%3);
-
-let str1 = "hello"
-let str2 = " muqtasid"
-
-let str3 = str1 + str2
-// console.log(str3);
-
-// console.log("1" + 2);
-// console.log(1 + "2");
-// console.log("1" + 2 + 2);
-// console.log(1 + 2 + "2");
-
-// console.log( (3 + 4) * 5 % 3);
-
-// console.log(+true);
-// console.log(+"");
-
-let num1, num2, num3
-
-num1 = num2 = num3 = 2 + 2
-
-let gameCounter = 100
-++gameCounter;
-console.log(gameCounter);
-
+console.log(" '5' + 2         =>", "5" + 2);       // "52"
+console.log(" 2 + '5'         =>", 2 + "5");       // "25"
+console.log(" '1' + 2 + 2     =>", "1" + 2 + 2);   // "122"
+console.log(" 1 + 2 + '2'     =>", 1 + 2 + "2");   // "32"
