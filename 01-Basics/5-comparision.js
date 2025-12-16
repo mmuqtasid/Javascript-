@@ -14,5 +14,5 @@ console.log(null== undefined);
 //Stirng
 console.log("2" == 2);
 console.log(2===5);
-console.log(12 === "22");
+console.log(12 === "22"); 
 
