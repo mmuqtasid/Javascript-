@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Key Press Detector</title>
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: Arial, sans-serif;
+            background-color: #1e1e2f;
+            color: white;
+        }
+
+        .color {
+            background: #2c2c3e;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.5);
+        }
+
+        table {
+            border-collapse: collapse;
+            text-align: center;
+        }
+
+        th, td {
+            border: 1px solid white;
+            padding: 10px 20px;
+        }
+
+        th {
+            background-color: #444;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="insert">
+        <h2>Press any key to see details</h2>
+    </div>
+
+    <script>
+        const insert = document.getElementById('insert');
+
+        window.addEventListener('keydown', (e) => {
+          insert.innerHTML = `
+            <div class='color'>
+            <table>
+            <tr>
+              <th>Key</th>
+              <th>Keycode</th> 
+              <th>Code</th>
+            </tr>
+            <tr>
+              <td>${e.key === ' ' ? 'Space' : e.key}</td>
+              <td>${e.keyCode}</td> 
+              <td>${e.code}</td>
+            </tr>
+          </table>
+            </div>
+          `;
+        });
+    </script>
+
+</body>
+</html>

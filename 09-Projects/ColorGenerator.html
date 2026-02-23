@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Random Color Generator</title>
+    <style>
+        body {
+            text-align: center;
+            margin-top: 100px;
+            font-family: Arial, sans-serif;
+            transition: background-color 0.5s ease;
+        }
+
+        button {
+            padding: 10px 20px;
+            margin: 10px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        h1 {
+            margin-bottom: 30px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Random Background Color Generator</h1>
+
+    <button id="start">Start</button>
+    <button id="stop">Stop</button>
+
+    <script>
+        // generate a random color
+        const randomColor = function () {
+            const hex = '0123456789ABCDEF';
+            let color = '#';
+
+            for (let i = 0; i < 6; i++) {
+                color += hex[Math.floor(Math.random() * 16)];
+            }
+
+            return color;
+        };
+
+        let intervalId;
+
+        document.querySelector("#start").addEventListener("click", function () {
+            if (!intervalId) {
+                intervalId = setInterval(function () {
+                    const newColor = randomColor();
+                    document.body.style.backgroundColor = newColor;
+                }, 1000);
+            }
+        });
+
+        document.querySelector("#stop").addEventListener("click", function () {
+            clearInterval(intervalId);
+            intervalId = null;
+        });
+    </script>
+
+</body>
+</html>
