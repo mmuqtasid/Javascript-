@@ -30,4 +30,22 @@ console.log(result);
 // Make a variable that stores a list of 5 fruits.
 // Print the data type of that variable and access the third fruit.
 
-let 
+let fruits = ["Apple", "Banana", "Mango", "Orange", "Grapes"];
+
+// Print data type
+console.log(typeof fruits);
+
+// Access the third fruit
+console.log(fruits[2]);
+
+let person = {
+  name: "Muqtasid",
+  age: 27,
+  city: "Lahore"
+};
+
+// Print data type of object
+console.log(typeof person);
+
+// Print value of name
+console.log(person.name);
